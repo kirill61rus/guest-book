@@ -1,6 +1,6 @@
 $('#ajax').click(function() {
     var msg = tinyMCE.get('msg').getContent();
-    $.post(base_url+'addmsg', {msg: msg}, function(data){
+    $.post(base_url+'msg/add', {msg: msg}, function(data){
         if (data!=0){
             data = JSON.parse(data);
             data.msg = msg;

@@ -7,7 +7,7 @@ if (validation_errors()){ echo '<div class="alert alert-danger">'.validation_err
 	<div class="col-md-3"></div>
 	<div class="col-sm-6">
 		<?php $attributes = array('role' => 'form', 'id'=>'EditProfile', 'autocomplete' => "off");
-		echo form_open_multipart('edit_profile', $attributes)?>
+		echo form_open_multipart('user_profile/edit', $attributes)?>
 			<div>
 				<img class="img-rounded pull-right" src=<?php echo (base_url().URL_AVATAR.(!empty($user_data[0]['avatar']) ? $user_data[0]['avatar'] : 'no_avatar.jpg'))?>>
 				<br/>

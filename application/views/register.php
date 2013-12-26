@@ -4,7 +4,7 @@ if (validation_errors()){ echo '<div class="alert alert-danger">'.validation_err
 	<div class="col-md-3"></div>
 	<div class="col-sm-6">
 		<?php $attributes = array('role' => 'form', 'id'=>'RegisterForm', 'autocomplete' => "off");
-		 echo form_open_multipart('register', $attributes)?>
+		 echo form_open_multipart('user_profile/registration', $attributes)?>
 			<h1>Registration</h1>
 			<div class="form-group">
 				<label for="inputUsername">Name: </label>

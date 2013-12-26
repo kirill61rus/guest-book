@@ -12,7 +12,7 @@
 	<?php $data = array('value' => 'Sign in', 'class' => 'btn btn-primary');
 	echo form_submit($data);?>
 
-   	<a href="<?php echo base_url("register")?>">Register</a>
+   	<a href="<?php echo base_url("user_profile/registration")?>">Register</a>
 <?php echo form_close()?>
 
 

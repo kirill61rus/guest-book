@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "home";
+$route['default_controller'] = "msg/msg_list";
 $route['404_override'] = '';
 
 

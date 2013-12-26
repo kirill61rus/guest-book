@@ -20,20 +20,18 @@ $(document).ready(function(){
                 required: true,
                 maxlength: 100,
                 remote : {
-                  url: base_url+"register/login_jq_check",
+                  url: base_url+"user_profile/login_jq_check",
                   type: "post"
                 }
-            },
-            
+            },            
             email:{
                 required: true,
                 my_email_validation: true,
                 remote : {
-                  url: base_url+"register/email_jq_check",
+                  url: base_url+"user_profile/email_jq_check",
                   type: "post"
                 }
             },
-
             password:{
                 required: true,
                 minlength: 6
@@ -84,20 +82,11 @@ $(document).ready(function(){
                 number: true,
                 range: [1900, 2013]
             },
-            login:{
-                required: true,
-                maxlength: 100,
-                remote : {
-                  url: base_url+"edit_profile/login_jq_check",
-                  type: "post"
-                }
-            },
-            
             email:{
                 required: true,
                 my_email_validation: true,
                 remote : {
-                  url: base_url+"edit_profile/email_jq_check",
+                  url: base_url+"user_profile/email_jq_edit_check",
                   type: "post"
                 }
             },
@@ -120,9 +109,6 @@ $(document).ready(function(){
         },
 
         messages:{
-            login:{
-                remote: "Login is busy",
-            },
             email:{
                 remote: "E-mail is busy",
             }, 

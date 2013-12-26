@@ -26,7 +26,7 @@ class Register extends CI_Controller {
 				$user['password'] = Users::encrypt_pass($this->input->post('password'));
 				$this->users->add($user);
 				$this->session->set_flashdata('item', '<div class="alert alert-success">Successfully registered!</div>');
-				redirect(site_url());
+				redirect(base_url());
 			} else {
 				$this->load->view('register', array('title' => 'Registration'));
 			}

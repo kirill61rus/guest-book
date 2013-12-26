@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/endguest2/';
+$config['base_url']	= 'http://localhost/guest-book/';
 
 /*
 |--------------------------------------------------------------------------

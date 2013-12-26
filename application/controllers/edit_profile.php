@@ -33,7 +33,7 @@ class Edit_profile extends CI_Controller {
 				$user = array_filter($user);
 				$this->users->edit($id, $user);
 				$this->session->set_flashdata('item', 'User data changed!');
-				redirect(base_url().'index.php/edit_profile');
+				redirect(base_url("edit_profile"));
 			} else {
 				$this->load->view('edit_profile', array('user_data' => $user_data));
 			}

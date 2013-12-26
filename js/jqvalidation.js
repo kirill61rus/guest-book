@@ -20,7 +20,7 @@ $(document).ready(function(){
                 required: true,
                 maxlength: 100,
                 remote : {
-                  url: base_url+"index.php/register/login_jq_check",
+                  url: base_url+"register/login_jq_check",
                   type: "post"
                 }
             },
@@ -29,7 +29,7 @@ $(document).ready(function(){
                 required: true,
                 my_email_validation: true,
                 remote : {
-                  url: base_url+"index.php/register/email_jq_check",
+                  url: base_url+"register/email_jq_check",
                   type: "post"
                 }
             },
@@ -88,7 +88,7 @@ $(document).ready(function(){
                 required: true,
                 maxlength: 100,
                 remote : {
-                  url: base_url+"index.php/edit_profile/login_jq_check",
+                  url: base_url+"edit_profile/login_jq_check",
                   type: "post"
                 }
             },
@@ -97,7 +97,7 @@ $(document).ready(function(){
                 required: true,
                 my_email_validation: true,
                 remote : {
-                  url: base_url+"index.php/edit_profile/email_jq_check",
+                  url: base_url+"edit_profile/email_jq_check",
                   type: "post"
                 }
             },

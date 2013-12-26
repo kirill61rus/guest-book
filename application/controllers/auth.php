@@ -17,7 +17,7 @@ class Auth extends CI_Controller {
 		} else {
 			$this->session->set_flashdata('item', '<div class="alert alert-danger">Incorrect login or password</div>');
 		}
-		redirect(site_url());
+		redirect(base_url());
 	}
 	/** 
 	 * delete user info from SESSION
@@ -25,6 +25,6 @@ class Auth extends CI_Controller {
 	 */
 	public function logout() {
 		$this->session->sess_destroy();
-		redirect(site_url());
+		redirect(base_url());
 	}
 }

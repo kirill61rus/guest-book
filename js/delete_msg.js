@@ -4,7 +4,7 @@ $(document).ready(function(){
 		var obj = $(this).parents(".panel-default");
 		$('#my_confirm').modal('show');
 			$(".modal .btn-danger").on("click", function(){
-		$.post(base_url+'index.php/delete_msg', {msg_id: msg_id});
+		$.post(base_url+'delete_msg', {msg_id: msg_id});
 		obj.fadeOut();
 		});
 	}); 

@@ -12,7 +12,8 @@ class User_profile extends CI_Controller {
      */
 	public function registration()	{
 		if ($this->session->userdata('id')){
-			redirect(base_url());
+			$this->session->set_flashdata('item', 'You are already registered. Maybe you want to edit this profile.');
+			redirect(base_url("user_profile/edit"));
 		} else {
 			$this->load->library('form_validation');
 			$this->load->library('user');
@@ -66,6 +67,7 @@ class User_profile extends CI_Controller {
 				$this->load->view('edit_profile', array('user_data' => $user_data));
 			}
 		} else {
+			$this->session->set_flashdata('item', '<div class="alert alert-danger">Please log in or sign up to view this page.</div>');
 			redirect(base_url());
 		}
 	}

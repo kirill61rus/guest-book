@@ -53,11 +53,16 @@ class Msg extends CI_Controller {
 		}
 	}
 	public function msg_list()	{
-		$this->load->library('form_validation');
-		$this->load->library('parser');
-		$this->load->model('messages');
-		$data['messages'] = $this->messages->get_list();
-		$data['title']    = 'Main page';
-		$this->load->view('home', $data);
+		if ($this->session->userdata('id')){
+			$this->load->library('form_validation');
+			$this->load->library('parser');
+			$this->load->model('messages');
+			$data['messages'] = $this->messages->get_list();
+			$data['title']    = 'Main page';
+			$this->load->view('showmsg', $data);
+			$this->load->view('add_message');
+		} else {
+			redirect(base_url());
+		}
 	}
 }

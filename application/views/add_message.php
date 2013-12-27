@@ -5,4 +5,5 @@
 	<br />
 	<span id='length' class="pull-right"></span>
 	<input id="ajax" type="button" class= "btn btn-primary" value="Send">
-<?php echo form_close()?>
+<?php echo form_close();
+$this->load->view('include/footer'); ?>

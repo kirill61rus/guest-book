@@ -1,5 +1,6 @@
-<?php $attributes = array('class' => 'form-signin', 'OnSubmit' => 'return authValidate(this);'); echo form_open('auth', $attributes)?>
- <?php if ($this->session->flashdata('item')) {
+<?php  $this->load->view('include/header');
+$attributes = array('class' => 'form-signin', 'OnSubmit' => 'return authValidate(this);'); echo form_open('auth', $attributes);
+if ($this->session->flashdata('item')) {
  echo ($this->session->flashdata('item'));} ?>
     <h2 class="form-signin-heading">Please sign in</h2>	
 
@@ -13,6 +14,7 @@
 	echo form_submit($data);?>
 
    	<a href="<?php echo base_url("user_profile/registration")?>">Register</a>
-<?php echo form_close()?>
+<?php echo form_close();
+$this->load->view('include/footer'); ?>
 
 

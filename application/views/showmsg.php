@@ -1,3 +1,4 @@
+<?php  $this->load->view('include/header'); ?>
 <div id='commentBlock'>
 	<?php 
 		foreach($messages as $item){

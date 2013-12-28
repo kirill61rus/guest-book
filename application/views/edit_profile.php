@@ -1,8 +1,5 @@
-
 <?php $this->load->view('include/header');
- if ($this->session->flashdata('item')) {
- echo '<div class="alert alert-success">'.($this->session->flashdata('item')).'</div>';
-}
+$this->flash->show();
 if (validation_errors()){ echo '<div class="alert alert-danger">'.validation_errors().'</div>';}?>
 	<div class="col-md-3"></div>
 	<div class="col-sm-6">

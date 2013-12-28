@@ -12,7 +12,7 @@ class Profile extends CI_Controller {
      */
 	public function registration()	{
 		if ($this->session->userdata('id')){
-			$this->session->set_flashdata('item', 'You are already registered. Maybe you want to edit this profile.');
+			$this->session->set_flashdata('success', 'You are already registered. Maybe you want to edit this profile.');
 			redirect(base_url("profile"));
 		} else {
 			$this->load->library('form_validation');
@@ -26,7 +26,7 @@ class Profile extends CI_Controller {
 				$user['email']    = $this->input->post('email');
 				$user['password'] = Users::encrypt_pass($this->input->post('password'));
 				$this->users->add($user);
-				$this->session->set_flashdata('item', '<div class="alert alert-success">Successfully registered!</div>');
+				$this->session->set_flashdata('success', 'Successfully registered!');
 				redirect(base_url('login'));
 			} else {
 				$this->load->view('register', array('title' => 'Registration'));
@@ -61,13 +61,13 @@ class Profile extends CI_Controller {
 				} else {$user['password'] = $this->input->post('password');}
 				$user = array_filter($user);
 				$this->users->edit($id, $user);
-				$this->session->set_flashdata('item', 'User data changed!');
+				$this->session->set_flashdata('success', 'User data changed!');
 				redirect(base_url("profile"));
 			} else {
 				$this->load->view('edit_profile', array('user_data' => $user_data));
 			}
 		} else {
-			$this->session->set_flashdata('item', '<div class="alert alert-danger">Please log in or sign up to view this page.</div>');
+			$this->session->set_flashdata('error', 'Please log in or sign up to view this page');
 			redirect(base_url());
 		}
 	}

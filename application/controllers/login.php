@@ -22,8 +22,8 @@ class Login extends CI_Controller {
 					$this->session->set_userdata($newdata);
 					redirect(base_url());
 				} else {
-					$this->session->set_flashdata('item', '<div class="alert alert-danger">Incorrect login or password</div>');
-					redirect(base_url());
+					$this->session->set_flashdata('error', 'Incorrect login or password');
+					redirect(base_url('login'));
 				}
 			} 
 		}

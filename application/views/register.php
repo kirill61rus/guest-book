@@ -1,4 +1,3 @@
-
 <?php $this->load->view('include/header');
 if (validation_errors()){ echo '<div class="alert alert-danger">'.validation_errors().'</div>';}?>
 	<div class="col-md-3"></div>

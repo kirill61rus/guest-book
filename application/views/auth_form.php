@@ -1,7 +1,7 @@
 <?php  $this->load->view('include/header');
 $attributes = array('class' => 'form-signin', 'OnSubmit' => 'return authValidate(this);'); echo form_open('login', $attributes);
-if ($this->session->flashdata('item')) {
- echo ($this->session->flashdata('item'));} ?>
+?>
+	<?php $this->flash->show() ?>
     <h2 class="form-signin-heading">Please sign in</h2>	
 
 	<?php $data = array('name' => 'login', 'required' => 'true', 'class' => 'form-control','placeholder' => 'Login', 'autofocus' => 'true');

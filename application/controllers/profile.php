@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class User_profile extends CI_Controller {
+class Profile extends CI_Controller {
 	public function __construct() {
         parent::__construct();
         $this->load->model('users'); 
@@ -13,7 +13,7 @@ class User_profile extends CI_Controller {
 	public function registration()	{
 		if ($this->session->userdata('id')){
 			$this->session->set_flashdata('item', 'You are already registered. Maybe you want to edit this profile.');
-			redirect(base_url("user_profile/edit"));
+			redirect(base_url("profile"));
 		} else {
 			$this->load->library('form_validation');
 			$this->load->library('user');
@@ -27,7 +27,7 @@ class User_profile extends CI_Controller {
 				$user['password'] = Users::encrypt_pass($this->input->post('password'));
 				$this->users->add($user);
 				$this->session->set_flashdata('item', '<div class="alert alert-success">Successfully registered!</div>');
-				redirect(base_url());
+				redirect(base_url('login'));
 			} else {
 				$this->load->view('register', array('title' => 'Registration'));
 			}
@@ -38,7 +38,7 @@ class User_profile extends CI_Controller {
      * @param array post [name, login, password...]
      * @return edit user info in db  
      */
-	public function edit()	{ 
+	public function index()	{ 
 		$id = $this->session->userdata('id');
 		if ($id){
 			$user_data = $this->users->user_data($id);
@@ -62,7 +62,7 @@ class User_profile extends CI_Controller {
 				$user = array_filter($user);
 				$this->users->edit($id, $user);
 				$this->session->set_flashdata('item', 'User data changed!');
-				redirect(base_url("user_profile/edit"));
+				redirect(base_url("profile"));
 			} else {
 				$this->load->view('edit_profile', array('user_data' => $user_data));
 			}

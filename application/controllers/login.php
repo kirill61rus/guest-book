@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Auth extends CI_Controller {
+class Login extends CI_Controller {
 	/** 
 	 * Encrypted pass and causes model authorization (model('user'))
 	 * @param string $login
@@ -9,7 +9,7 @@ class Auth extends CI_Controller {
 	 */
 	public function index()	{
 		if ($this->session->userdata('id')){
-			redirect(base_url("msg/msg_list"));
+			redirect(base_url());
 		} else {
 			$this->load->library('form_validation');
 			$this->load->view('auth_form');
@@ -33,7 +33,7 @@ class Auth extends CI_Controller {
 	 * @return authorization page
 	 */
 	public function logout() {
-		$this->session->sess_destroy();
+		$this->session->unset_userdata('id');
 		redirect(base_url());
 	}
 }

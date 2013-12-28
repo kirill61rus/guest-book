@@ -52,7 +52,7 @@ class Msg extends CI_Controller {
 			$this->messages->delete($msg_id);
 		}
 	}
-	public function msg_list()	{
+	public function index()	{
 		if ($this->session->userdata('id')){
 			$this->load->library('form_validation');
 			$this->load->library('parser');
@@ -62,7 +62,7 @@ class Msg extends CI_Controller {
 			$this->load->view('showmsg', $data);
 			$this->load->view('add_message');
 		} else {
-			redirect(base_url());
+			redirect(base_url('login'));
 		}
 	}
 }

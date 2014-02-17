@@ -4,6 +4,7 @@
 			<li><a href="<?=base_url()?>">Home</a></li>
 			<li><a href="<?php echo base_url("profile")?>">My profile</a></li>
 			<li><a href="<?=base_url("login/logout")?>">Log out</a></li>
+			
 		</ul>
 	</div>
 </nav>

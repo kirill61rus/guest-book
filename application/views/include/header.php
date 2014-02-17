@@ -8,7 +8,7 @@
 		<link href="<?=base_url();?>public/bootstrap/css/justified-nav.css" rel="stylesheet"/>
 		<link href="<?=base_url();?>public/bootstrap/css/signin.css" rel="stylesheet" />
 		<script type="text/javascript" src="<?=base_url();?>js/libraries/jquery.validate.js"></script>
-		<script type="text/javascript" src="<?=base_url();?>js/jqvalidation.js"></script>	
+		<script type="text/javascript" src="<?=base_url();?>js/qvalidation.js"></script>	
 		<script type="text/javascript" src="<?=base_url();?>js/delete_msg.js"></script>
 		<script type="text/javascript" src="<?=base_url();?>js/libraries/bootstrap.min.js"></script>
 

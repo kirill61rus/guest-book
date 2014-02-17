@@ -15,6 +15,7 @@ $attributes = array('class' => 'form-signin', 'OnSubmit' => 'return authValidate
 
    	<a href="<?php echo base_url("profile/registration")?>">Register</a>
 <?php echo form_close();
+
 $this->load->view('include/footer'); ?>
 
 
